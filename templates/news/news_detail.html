@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangiliklar qismi</title>
+</head>
+<body>
+
+    <h3>{{ news.title }}</h3>
+    <p>Sana: {{ news.publish_time }}</p>
+
+    {% if news.image %}
+        <img src="{{ news.image.url }}" alt="{{ news.title }}" style="width: 500px; height: auto;">
+    {% endif %}
+
+    <p>{{ news.body }}</p>
+
+</body>
+</html>

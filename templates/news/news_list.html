@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangiliklar</title>
+</head>
+<body>
+    <h1>Barcha yangiliklar sahifasi</h1>
+
+    {% for news in news_list %}
+        <div style="margin-bottom: 20px;">
+            {% if news.image %}
+                <img src="{{ news.image.url }}" width="100">
+            {% endif %}
+
+            <a href="{% url 'news_detail_page' news.id %}">
+                <strong>{{ news.title }}</strong>
+            </a>
+        </div>
+    {% endfor %}
+
+</body>
+</html>
